@@ -1,70 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shimul Chandra Barman | Software Engineer</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Shimul Chandra Barman - Creative Developer Portfolio">
+    <title>Shimul | Developer Portfolio</title>
+    
+    <!-- Performance Hints: Preconnect to image sources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://raw.githubusercontent.com">
+    <link rel="preconnect" href="https://images.unsplash.com">
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              mono: ['Fira Code', 'monospace'],
+            },
+            colors: {
+              glass: {
+                light: 'rgba(255, 255, 255, 0.7)',
+                dark: 'rgba(17, 24, 39, 0.7)',
+              }
+            },
+            animation: {
+              'blob': 'blob 10s infinite',
+              'fade-in': 'fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+              'slide-up': 'slideUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+              'scale-reveal': 'scaleReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+              'progress': 'progress 4s linear',
+              'grid-flow': 'gridFlow 20s linear infinite',
+              'gradient-xy': 'gradient-xy 3s ease infinite',
+            },
+            keyframes: {
+              blob: {
+                '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                '100%': { transform: 'translate(0px, 0px) scale(1)' },
+              },
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              slideUp: {
+                '0%': { opacity: '0', transform: 'translateY(40px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              scaleReveal: {
+                '0%': { opacity: '0', transform: 'scale(0.95)' },
+                '100%': { opacity: '1', transform: 'scale(1)' },
+              },
+              progress: {
+                '0%': { width: '0%' },
+                '100%': { width: '100%' },
+              },
+              gridFlow: {
+                '0%': { transform: 'translateY(0)' },
+                '100%': { transform: 'translateY(50px)' }
+              },
+              'gradient-xy': {
+                '0%, 100%': {
+                    'background-size': '400% 400%',
+                    'background-position': 'left center'
+                },
+                '50%': {
+                    'background-size': '200% 200%',
+                    'background-position': 'right center'
+                }
+              }
+            },
+            transitionTimingFunction: {
+              'premium': 'cubic-bezier(0.16, 1, 0.3, 1)', 
+            }
+          }
+        }
+      }
+    </script>
     <style>
-        :root {
-            --accent: #3b82f6;
-        }
-        * {
-            -webkit-tap-highlight-color: transparent;
-        }
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            scroll-behavior: smooth;
-            -webkit-font-smoothing: antialiased;
-            overflow-x: hidden;
-        }
-        .mono {
-            font-family: 'Fira Code', monospace;
-        }
-        ::-webkit-scrollbar {
-            width: 6px;
-        }
-        ::-webkit-scrollbar-track {
-            background: transparent;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: rgba(155, 155, 155, 0.2);
-            border-radius: 20px;
-        }
-        .dark ::-webkit-scrollbar-thumb {
-            background: rgba(255, 255, 255, 0.1);
-        }
-        section {
-            scroll-margin-top: 100px;
-        }
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
-        }
-        .animate-float {
-            animation: float 3s ease-in-out infinite;
-        }
+      html {
+        scroll-behavior: smooth;
+      }
+      
+      .gpu-accelerated {
+        transform: translateZ(0);
+        backface-visibility: hidden;
+        perspective: 1000px;
+        will-change: transform, opacity;
+      }
+
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background-color: rgba(156, 163, 175, 0.3);
+        border-radius: 20px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background-color: rgba(156, 163, 175, 0.6);
+      }
+      
+      .glass-panel {
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      
+      .dark .glass-panel {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      }
+
+      .menu-overlay {
+        transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.4s;
+      }
+      .menu-content {
+        transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      /* Tech Background Grid */
+      .tech-grid-bg {
+        background-size: 50px 50px;
+        background-image: linear-gradient(to right, rgba(100, 100, 100, 0.05) 1px, transparent 1px),
+                          linear-gradient(to bottom, rgba(100, 100, 100, 0.05) 1px, transparent 1px);
+        mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+      }
+
+      /* Animated Gradient Text */
+      .text-gradient-animate {
+        background-size: 200% auto;
+        animation: gradient-xy 4s linear infinite;
+      }
     </style>
 
 <link rel="stylesheet" href="/index.css">
-<script type="importmap">
+  <script type="importmap">
 {
   "imports": {
-    "react": "https://esm.sh/react@19.0.0",
-    "react-dom": "https://esm.sh/react-dom@19.0.0",
-    "react-dom/client": "https://esm.sh/react-dom@19.0.0/client",
-    "lucide-react": "https://esm.sh/lucide-react@0.460.0?external=react",
-    "framer-motion": "https://esm.sh/framer-motion@11.11.17?external=react,react-dom",
     "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
-    "react/": "https://esm.sh/react@^19.2.4/"
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4"
   }
 }
 </script>
-  <script type="module" crossorigin src="/assets/index-C-NnruXs.js"></script>
+  <script type="module" crossorigin src="/assets/index-BlUpV0jp.js"></script>
 </head>
-<body class="bg-zinc-50 dark:bg-zinc-950 transition-colors duration-500">
+  <body class="bg-gray-50 dark:bg-[#050505] text-gray-900 dark:text-gray-100 transition-colors duration-500 ease-premium selection:bg-blue-500/30 selection:text-blue-500 overflow-x-hidden">
     <div id="root"></div>
 </body>
 </html>
